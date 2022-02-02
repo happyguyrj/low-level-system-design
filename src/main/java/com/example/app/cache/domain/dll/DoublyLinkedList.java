@@ -1,4 +1,4 @@
-package com.example.app.cache.domain;
+package com.example.app.cache.domain.dll;
 
 import com.example.app.cache.exception.InvalidDataException;
 

@@ -1,7 +1,7 @@
 package com.example.app.cache.evictionPolicy;
 
-import com.example.app.cache.domain.DoublyLinkedList;
-import com.example.app.cache.domain.DoublyLinkedListNode;
+import com.example.app.cache.domain.dll.DoublyLinkedList;
+import com.example.app.cache.domain.dll.DoublyLinkedListNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class LRUEvictionPolicy<Key> implements EvictionPolicy<Key> {
 
     @Override
     public void keyAccessed(Key key) {
-        if ((map.containsKey(key))) {
+        if (map.containsKey(key)) {
             dll.detachNode(map.get(key));
             dll.insertNodeAtEnd(map.get(key));
             return;

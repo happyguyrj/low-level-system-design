@@ -1,4 +1,4 @@
-package com.example.app.cache.domain;
+package com.example.app.cache.domain.dll;
 
 public class DoublyLinkedListNode<E> {
 

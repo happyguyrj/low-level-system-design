@@ -1,7 +1,7 @@
 package com.example.app.cache;
 
-import com.example.app.cache.domain.DoublyLinkedList;
-import com.example.app.cache.domain.DoublyLinkedListNode;
+import com.example.app.cache.domain.dll.DoublyLinkedList;
+import com.example.app.cache.domain.dll.DoublyLinkedListNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
