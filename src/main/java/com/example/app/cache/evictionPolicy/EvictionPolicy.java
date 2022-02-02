@@ -6,4 +6,6 @@ public interface EvictionPolicy<Key> {
 
     void evictKey();
 
+    Key evict();
+
 }

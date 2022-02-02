@@ -1,7 +1,12 @@
-package com.example.application.cache;
+package com.example.app.cache;
 
-import com.example.application.cache.data.Storage;
-import com.example.application.cache.evictionPolicy.EvictionPolicy;
+import com.example.app.cache.data.Storage;
+import com.example.app.cache.evictionPolicy.EvictionPolicy;
+import com.example.app.cache.exception.InvalidStateException;
+import com.example.app.cache.exception.KeyNotFoundException;
+import com.example.app.cache.exception.StorageFullException;
+
+import java.util.Objects;
 
 public class Cache<Key, Value> {
     private final Storage<Key, Value> storage;
@@ -13,9 +18,31 @@ public class Cache<Key, Value> {
     }
 
     public Value get(final Key key) {
+        try {
+            Value value = storage.get(key);
+            evictionPolicy.keyAccessed(key);
+            return value;
+        } catch (KeyNotFoundException keyNotFoundException) {
+            System.out.println("Hit a cache miss  for key " + key);
+        }
         return null;
     }
 
     public void put(final Key key, final Value value) {
+        try {
+            storage.put(key, value);
+            evictionPolicy.keyAccessed(key);
+        } catch (StorageFullException storageFullException) {
+            System.out.println("Got storage full! Trying to evict");
+
+            Key keyToBeRemoved = evictionPolicy.evict();
+            if (Objects.isNull(keyToBeRemoved)) {
+                throw new InvalidStateException("Invalid State! No storage space left and no keys to evict");
+            }
+
+            storage.remove(keyToBeRemoved);
+            System.out.println("Evicting key " + keyToBeRemoved);
+            put(key, value);
+        }
     }
 }
