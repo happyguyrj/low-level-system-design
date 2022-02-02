@@ -35,7 +35,7 @@ public class Cache<Key, Value> {
         } catch (StorageFullException storageFullException) {
             System.out.println("Got storage full! Trying to evict");
 
-            Key keyToBeRemoved = evictionPolicy.evict();
+            Key keyToBeRemoved = evictionPolicy.keyToEvict();
             if (Objects.isNull(keyToBeRemoved)) {
                 throw new InvalidStateException("Invalid State! No storage space left and no keys to evict");
             }
