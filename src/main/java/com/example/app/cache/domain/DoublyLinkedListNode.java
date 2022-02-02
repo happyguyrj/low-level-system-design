@@ -15,4 +15,12 @@ public class DoublyLinkedListNode<E> {
     public E getElement() {
         return element;
     }
+
+    public DoublyLinkedListNode<E> getPrev() {
+        return prev;
+    }
+
+    public DoublyLinkedListNode<E> getNext() {
+        return next;
+    }
 }

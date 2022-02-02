@@ -17,7 +17,7 @@ public class DoublyLinkedList<E> {
     }
 
     public boolean isEmpty() {
-        return dummyHead == dummyTail;
+        return dummyHead.next == dummyTail;
     }
 
     public DoublyLinkedListNode<E> insertElementAtEnd(final E element) {
