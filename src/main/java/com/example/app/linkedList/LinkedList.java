@@ -14,5 +14,7 @@ public interface LinkedList<E> {
 
     E getFirstElement();
 
+    int size();
+
     void printElement();
 }

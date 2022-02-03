@@ -1,6 +1,6 @@
 package com.example.app.linkedList;
 
-public class LinkedListImpl<E> implements LinkedList<E>{
+public class LinkedListImpl<E> implements LinkedList<E> {
 
     Node<E> head;
     Node<E> tail;
@@ -128,5 +128,20 @@ public class LinkedListImpl<E> implements LinkedList<E>{
 
     private boolean checkEmptyList() {
         return head == null;
+    }
+
+    @Override
+    public int size() {
+        if (checkEmptyList())
+            return 0;
+
+        Node<E> startNode = head;
+        int size = 0;
+
+        while (startNode != null) {
+            startNode = startNode.getNext();
+            size++;
+        }
+        return size;
     }
 }

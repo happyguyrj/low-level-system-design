@@ -102,4 +102,25 @@ class LinkedListTest {
 		Assert.isTrue(linkedList.deleteAtPosition(5));
 		linkedList.printElement();
 	}
+
+	@Test
+	void testSize() {
+		LinkedList<Integer> linkedList = new LinkedListImpl<>();
+		linkedList.insertInFront(1);
+		linkedList.insertInFront(2);
+		linkedList.insertInFront(3);
+		linkedList.insertInFront(4);
+		linkedList.insertInEnd(5);
+		linkedList.insertInEnd(6);
+		linkedList.insertInEnd(7);
+		linkedList.insertAtPosition(8,0);
+		linkedList.insertAtPosition(9,1);
+		linkedList.insertAtPosition(0,2);
+		linkedList.insertAtPosition(-1,1);
+
+		Assert.isTrue(!linkedList.deleteAtPosition(20));
+		Assert.isTrue(!linkedList.deleteAtPosition(-1));
+		Assert.isTrue(linkedList.deleteAtPosition(5));
+		Assert.isTrue(linkedList.size() == 10);
+	}
 }
