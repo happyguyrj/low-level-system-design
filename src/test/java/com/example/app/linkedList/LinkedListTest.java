@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
+import java.util.Iterator;
+
 class LinkedListTest {
 
 	@Test
@@ -106,6 +108,16 @@ class LinkedListTest {
 
 		Assert.isTrue(linkedList.getElementAtPosition(20)==null);
 		Assert.isTrue(linkedList.getElementAtPosition(0)==8);
+		Assert.isTrue(linkedList.getFirstElement()==8);
+	}
+
+	@Test
+	void testIterable() {
+		LinkedList<Integer> linkedList = createLinkedList();
+
+		Iterator<Integer> iterator = linkedList.iterator();
+		Assert.isTrue(iterator.next() == 8);
+		Assert.isTrue(iterator.hasNext());
 	}
 
 	private LinkedList<Integer> createLinkedList(){

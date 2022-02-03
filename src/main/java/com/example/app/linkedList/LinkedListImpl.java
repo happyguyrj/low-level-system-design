@@ -1,6 +1,8 @@
 package com.example.app.linkedList;
 
-public class LinkedListImpl<E> implements LinkedList<E> {
+import java.util.Iterator;
+
+public class LinkedListImpl<E> implements LinkedList<E>,Iterable<E> {
     Node<E> head;
     Node<E> tail;
 
@@ -195,5 +197,33 @@ public class LinkedListImpl<E> implements LinkedList<E> {
         }
 
         return startNode.getValue();
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+
+            Node<E> current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public E next() {
+                if (hasNext()) {
+                    E data = current.getValue();
+                    current = current.getNext();
+                    return data;
+                }
+                return null;
+            }
+
+            @Override
+            public void remove() {
+
+            }
+        };
     }
 }

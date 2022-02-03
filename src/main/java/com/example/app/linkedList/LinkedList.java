@@ -1,5 +1,7 @@
 package com.example.app.linkedList;
 
+import java.util.Iterator;
+
 public interface LinkedList<E> {
 
     void insertInEnd(E elementToBeInserted);
@@ -11,6 +13,7 @@ public interface LinkedList<E> {
 
     E getFirstElement();
     E getElementAtPosition(int position);
+    Iterator<E> iterator();
 
     int size();
 
