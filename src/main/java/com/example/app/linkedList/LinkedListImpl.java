@@ -1,5 +1,8 @@
 package com.example.app.linkedList;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 public class LinkedListImpl<E> implements LinkedList<E> {
 
     Node<E> head;
@@ -84,7 +87,7 @@ public class LinkedListImpl<E> implements LinkedList<E> {
         }
 
         int currentPosition = 0;
-        if (checkEmptyList()){
+        if (isEmpty()){
             System.out.println("Cannot insert at position " + position);
             return;
         }
@@ -107,7 +110,7 @@ public class LinkedListImpl<E> implements LinkedList<E> {
         Node<E> previousNode = head;
         int currentPosition = 0;
 
-        if (checkEmptyList()){
+        if (isEmpty()){
             System.out.println("Node to be deleted does not exist");
             return false;
         }
@@ -126,13 +129,9 @@ public class LinkedListImpl<E> implements LinkedList<E> {
         return true;
     }
 
-    private boolean checkEmptyList() {
-        return head == null;
-    }
-
     @Override
     public int size() {
-        if (checkEmptyList())
+        if (head == null)
             return 0;
 
         Node<E> startNode = head;
@@ -143,5 +142,35 @@ public class LinkedListImpl<E> implements LinkedList<E> {
             size++;
         }
         return size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size()==0;
+    }
+
+    @Override
+    public boolean contains(E element) {
+        Node<E> startNode = head;
+
+        if (startNode == null) {
+            System.out.println("Empty list");
+            return false;
+        }
+
+        while (!startNode.getValue().equals(element)) {
+            startNode = startNode.getNext();
+
+            if (startNode == null) {
+                System.out.println("Node to be deleted does not exist");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void clear() {
+        head = null;
     }
 }
