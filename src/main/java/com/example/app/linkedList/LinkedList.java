@@ -17,7 +17,7 @@ public interface LinkedList<E> {
 
     int size();
 
-    void printElement();
+    void printElements();
 
     boolean isEmpty();
 

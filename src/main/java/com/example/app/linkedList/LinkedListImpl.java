@@ -67,7 +67,7 @@ public class LinkedListImpl<E> implements LinkedList<E>,Iterable<E> {
     }
 
     @Override
-    public void printElement() {
+    public void printElements() {
         Node<E> startNode = head;
         while (startNode != null) {
             System.out.print(startNode.getValue() + " ");
