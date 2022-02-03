@@ -1,28 +1,28 @@
 ## LinkedList implementation in java without using java util class
 This implements follow methods
-###insertInEnd
+### insertInEnd
 inserts the element in the end of linkedList in O(1) time
-###insertInFront
+### insertInFront
 inserts the element in the front of linkedList in O(1) time
-###insertAtPosition
+### insertAtPosition
 inserts the element at given index in linkedList in O(n) time
-###delete
+### delete
 deletes the given element if it exists in the linkedList in O(n) time
-###deleteAtPosition
+### deleteAtPosition
 deletes the given element at given position in the linkedList in O(n) time
-###getFirstElement
+### getFirstElement
 returns first element in the linkedList in O(1) time
-###getElementAtPosition
+### getElementAtPosition
 returns first element at given position in the linkedList in O(n) time
-###iterator
+### iterator
 returns a iterator to linkedList in O(1) time
-###size
+### size
 returns this size of linkedList in O(n) time
-###printElement
+### printElement
 prints all elements in linkedList in O(n) time
-###isEmpty
+### isEmpty
 returns true if linkedList is empty in O(1) time
-###contains
+### contains
 returns true if linkedList contains given element in O(n) time
-###clear
+### clear
 removed all elements from linkedList in O(1) time
