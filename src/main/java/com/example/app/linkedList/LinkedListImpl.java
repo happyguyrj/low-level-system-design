@@ -1,10 +1,6 @@
 package com.example.app.linkedList;
 
-import java.util.Collection;
-import java.util.Iterator;
-
 public class LinkedListImpl<E> implements LinkedList<E> {
-
     Node<E> head;
     Node<E> tail;
 
@@ -172,5 +168,32 @@ public class LinkedListImpl<E> implements LinkedList<E> {
     @Override
     public void clear() {
         head = null;
+    }
+
+    @Override
+    public E getElementAtPosition(int position) {
+        if (position < 0) {
+            System.out.println("Position cannot be less than 0");
+            return null;
+        }
+        Node<E> startNode = head;
+        Node<E> previousNode = head;
+        int currentPosition = 0;
+
+        if (isEmpty()){
+            System.out.println("Empty list");
+            return null;
+        }
+
+        while (currentPosition ++ < position) {
+            startNode = startNode.getNext();
+
+            if (startNode == null) {
+                System.out.println("Position does not exist");
+                return null;
+            }
+        }
+
+        return startNode.getValue();
     }
 }

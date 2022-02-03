@@ -64,18 +64,7 @@ class LinkedListTest {
 
 	@Test
 	void testDeleteElement() {
-		LinkedList<Integer> linkedList = new LinkedListImpl<>();
-		linkedList.insertInFront(1);
-		linkedList.insertInFront(2);
-		linkedList.insertInFront(3);
-		linkedList.insertInFront(4);
-		linkedList.insertInEnd(5);
-		linkedList.insertInEnd(6);
-		linkedList.insertInEnd(7);
-		linkedList.insertAtPosition(8,0);
-		linkedList.insertAtPosition(9,1);
-		linkedList.insertAtPosition(0,2);
-		linkedList.insertAtPosition(-1,1);
+		LinkedList<Integer> linkedList = createLinkedList();
 
 		Assert.isTrue(!linkedList.delete(10));
 		Assert.isTrue(linkedList.delete(-1));
@@ -84,18 +73,7 @@ class LinkedListTest {
 
 	@Test
 	void testDeleteElementAtPosition() {
-		LinkedList<Integer> linkedList = new LinkedListImpl<>();
-		linkedList.insertInFront(1);
-		linkedList.insertInFront(2);
-		linkedList.insertInFront(3);
-		linkedList.insertInFront(4);
-		linkedList.insertInEnd(5);
-		linkedList.insertInEnd(6);
-		linkedList.insertInEnd(7);
-		linkedList.insertAtPosition(8,0);
-		linkedList.insertAtPosition(9,1);
-		linkedList.insertAtPosition(0,2);
-		linkedList.insertAtPosition(-1,1);
+		LinkedList<Integer> linkedList = createLinkedList();
 
 		Assert.isTrue(!linkedList.deleteAtPosition(20));
 		Assert.isTrue(!linkedList.deleteAtPosition(-1));
@@ -105,18 +83,7 @@ class LinkedListTest {
 
 	@Test
 	void testSize() {
-		LinkedList<Integer> linkedList = new LinkedListImpl<>();
-		linkedList.insertInFront(1);
-		linkedList.insertInFront(2);
-		linkedList.insertInFront(3);
-		linkedList.insertInFront(4);
-		linkedList.insertInEnd(5);
-		linkedList.insertInEnd(6);
-		linkedList.insertInEnd(7);
-		linkedList.insertAtPosition(8,0);
-		linkedList.insertAtPosition(9,1);
-		linkedList.insertAtPosition(0,2);
-		linkedList.insertAtPosition(-1,1);
+		LinkedList<Integer> linkedList = createLinkedList();
 
 		Assert.isTrue(!linkedList.deleteAtPosition(20));
 		Assert.isTrue(!linkedList.deleteAtPosition(-1));
@@ -127,6 +94,21 @@ class LinkedListTest {
 
 	@Test
 	void testContains() {
+		LinkedList<Integer> linkedList = createLinkedList();
+
+		Assert.isTrue(!linkedList.contains(20));
+		Assert.isTrue(linkedList.contains(-1));
+	}
+
+	@Test
+	void testGetAtPosition() {
+		LinkedList<Integer> linkedList = createLinkedList();
+
+		Assert.isTrue(linkedList.getElementAtPosition(20)==null);
+		Assert.isTrue(linkedList.getElementAtPosition(0)==8);
+	}
+
+	private LinkedList<Integer> createLinkedList(){
 		LinkedList<Integer> linkedList = new LinkedListImpl<>();
 		linkedList.insertInFront(1);
 		linkedList.insertInFront(2);
@@ -139,8 +121,6 @@ class LinkedListTest {
 		linkedList.insertAtPosition(9,1);
 		linkedList.insertAtPosition(0,2);
 		linkedList.insertAtPosition(-1,1);
-
-		Assert.isTrue(!linkedList.contains(20));
-		Assert.isTrue(linkedList.contains(-1));
+		return linkedList;
 	}
 }
