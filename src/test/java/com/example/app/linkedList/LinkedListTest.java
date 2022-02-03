@@ -120,6 +120,13 @@ class LinkedListTest {
 		Assert.isTrue(iterator.hasNext());
 	}
 
+	@Test
+	void testClear() {
+		LinkedList<Integer> linkedList = createLinkedList();
+		linkedList.clear();
+		Assert.isTrue(linkedList.isEmpty());
+	}
+
 	private LinkedList<Integer> createLinkedList(){
 		LinkedList<Integer> linkedList = new LinkedListImpl<>();
 		linkedList.insertInFront(1);
