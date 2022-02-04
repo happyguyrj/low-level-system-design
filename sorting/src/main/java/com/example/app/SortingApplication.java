@@ -4,6 +4,7 @@ import com.example.app.comparatorImpl.UserComparator;
 import com.example.app.domain.User;
 import com.example.app.sortingImpl.BubbleSortImpl;
 import com.example.app.sortingImpl.SelectionSortImpl;
+import com.example.app.staticSorts.SelectionSort;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -27,6 +28,7 @@ public class SortingApplication {
 
 		Sort<User> bubbleSort = new BubbleSortImpl<>();
 		Sort<User> selectionSort = new SelectionSortImpl<>();
+
 		bubbleSort.sort(users, new UserComparator());
 		selectionSort.sort(users, new UserComparator());
 	}
