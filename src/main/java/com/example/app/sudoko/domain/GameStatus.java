@@ -1,4 +1,7 @@
 package com.example.app.sudoko.domain;
 
-public class GameStatus {
+public enum GameStatus {
+    IN_PROGRESS,
+    COMPLETED,
+    INCORRECT
 }

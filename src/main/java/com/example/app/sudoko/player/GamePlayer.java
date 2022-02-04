@@ -1,4 +1,4 @@
-package com.example.app.sudoko.plater;
+package com.example.app.sudoko.player;
 
 import com.example.app.sudoko.domain.Game;
 import com.example.app.sudoko.domain.GameStatus;
