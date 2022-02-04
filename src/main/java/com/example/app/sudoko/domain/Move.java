@@ -36,11 +36,12 @@ public class Move {
         this.num = num;
     }
 
-    public boolean isValid(Move move) {
-        return checkBounds(move.getCol()) && checkBounds(move.getRow()) && checkBounds(move.getNum());
-    }
-
-    private boolean checkBounds(int value) {
-        return value < 9 && value > 0;
+    @Override
+    public String toString() {
+        return "Move{" +
+                "row=" + row +
+                ", col=" + col +
+                ", num=" + num +
+                '}';
     }
 }

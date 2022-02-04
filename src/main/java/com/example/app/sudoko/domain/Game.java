@@ -7,6 +7,7 @@ public class Game {
     private List<List<Integer>> board;
     private GameStatus gameStatus;
     private DifficultyLevel difficultyLevel;
+    private int size;
     private int rowFilled;
     private int columnsFilled;
 
@@ -38,6 +39,14 @@ public class Game {
         this.difficultyLevel = difficultyLevel;
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public int getRowFilled() {
         return rowFilled;
     }
@@ -52,5 +61,14 @@ public class Game {
 
     public void setColumnsFilled(int columnsFilled) {
         this.columnsFilled = columnsFilled;
+    }
+
+    public void print() {
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size; j++){
+                System.out.print(board.get(i).get(j) + ", ");
+            }
+            System.out.println();
+        }
     }
 }
