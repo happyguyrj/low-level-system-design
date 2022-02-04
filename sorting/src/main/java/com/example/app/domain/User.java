@@ -1,6 +1,7 @@
 package com.example.app.domain;
 
 import java.util.Objects;
+import com.example.app.Comparable;
 
 public class User implements Comparable<User> {
 

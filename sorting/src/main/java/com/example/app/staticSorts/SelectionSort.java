@@ -22,7 +22,7 @@ public class SelectionSort<E> {
             list[i] = list[minIndex];
             list[minIndex] = temp;
         }
-        System.out.println("Sorted in " + operations + " steps by selection sort");
+        System.out.println("Sorted in " + operations + " steps by static selection sort");
         return list;
     }
 }

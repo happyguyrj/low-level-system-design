@@ -7,6 +7,8 @@ import com.example.app.sortingImpl.SelectionSortImpl;
 import com.example.app.staticSorts.SelectionSort;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+
 @SpringBootApplication
 public class SortingApplication {
 
@@ -31,6 +33,8 @@ public class SortingApplication {
 
 		bubbleSort.sort(users, new UserComparator());
 		selectionSort.sort(users, new UserComparator());
+
+		SelectionSort.sort(users);
 	}
 
 }
