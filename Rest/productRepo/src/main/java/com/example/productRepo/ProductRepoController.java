@@ -25,6 +25,7 @@ public class ProductRepoController {
         productRepo.put(almond.getId(), almond);
     }
 
+    // GET API
     // @RequestMapping annotation is used to define the Request URI to access the REST Endpoints.
     // We can define Request method to consume and produce object. The default request method is GET.
     @RequestMapping(value = "/products")
@@ -32,8 +33,14 @@ public class ProductRepoController {
         return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getProduct(@PathVariable("id") String id) {
+        return new ResponseEntity<>(productRepo.get(id), HttpStatus.OK);
+    }
+
     // The @RequestBody annotation is used to define the request body content type.
 
+    // POST API
     // The HTTP POST request is used to create a resource. This method contains the Request Body.
     // We can send request parameters and path variables to define the custom or dynamic URL.
     @RequestMapping(value = "/products", method = RequestMethod.POST)
@@ -42,6 +49,7 @@ public class ProductRepoController {
         return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
     }
 
+    // PUT API
     // The HTTP PUT request is used to update the existing resource. This method contains a Request Body.
     // We can send request parameters and path variables to define the custom or dynamic URL.
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
@@ -49,17 +57,18 @@ public class ProductRepoController {
         productRepo.remove(id);
         product.setId(id);
         productRepo.put(id, product);
-        return new ResponseEntity<>("Product is updated successsfully", HttpStatus.OK);
+        return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
     }
 
     // The @PathVariable annotation is used to define the custom or dynamic request URI.
 
+    // DELETE API
     // The HTTP Delete request is used to delete the existing resource. This method does not contain any Request Body.
     // We can send request parameters and path variables to define the custom or dynamic URL.
     @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> delete(@PathVariable("id") String id) {
         productRepo.remove(id);
-        return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
+        return new ResponseEntity<>("Product is deleted successfully", HttpStatus.OK);
     }
 
 }
