@@ -34,7 +34,7 @@ public class User implements Comparable<User> {
     // lhs == rhs - lhs.compareTo(rhs) == 0
     @Override
     public int compareTo(User user) {
-        return user.getAge() - age;
+        return age - user.getAge();
     }
 
     @Override

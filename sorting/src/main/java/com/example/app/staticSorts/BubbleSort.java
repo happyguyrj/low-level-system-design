@@ -2,7 +2,7 @@ package com.example.app.staticSorts;
 
 import com.example.app.Comparable;
 
-public class SelectionSort<E> {
+public class BubbleSort<E> {
 
     // impose an upper bound on type E, which states that E is guaranteed to implement the Comparable interface.
     public static <E extends Comparable<? super E>> E[] sort(E[] list) {
@@ -10,20 +10,16 @@ public class SelectionSort<E> {
         int operations = 0;
 
         for (int i = 0; i < n-1; i++) {
-            int minIndex = i;
-
-            for (int j = i+1; j < n ; j++) {
-                if (list[j].compareTo(list[minIndex]) < 0) {
-                    minIndex = j;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (list[j].compareTo(list[j + 1]) > 0) {
+                    E temp = list[j];
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
                     operations++;
                 }
             }
-
-            E temp = list[i];
-            list[i] = list[minIndex];
-            list[minIndex] = temp;
         }
-        System.out.println("Sorted in " + operations + " steps by static selection sort");
+        System.out.println("Sorted in " + operations + " steps by static bubble sort");
         return list;
     }
 }

@@ -1,9 +1,9 @@
 package com.example.app;
 
-import com.example.app.comparatorImpl.UserComparator;
 import com.example.app.domain.User;
-import com.example.app.sortingImpl.BubbleSortImpl;
-import com.example.app.sortingImpl.SelectionSortImpl;
+import com.example.app.staticSorts.BubbleSort;
+import com.example.app.staticSorts.HeapSort;
+import com.example.app.staticSorts.InsertionSort;
 import com.example.app.staticSorts.SelectionSort;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -28,13 +28,25 @@ public class SortingApplication {
 
 		User[] users = {user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12};
 
-		Sort<User> bubbleSort = new BubbleSortImpl<>();
-		Sort<User> selectionSort = new SelectionSortImpl<>();
+//		User[] bubble = Arrays.copyOf(users, users.length);
+//		Sort<User> bubbleSort = new BubbleSortImpl<>();
+//		bubbleSort.sort(bubble, new UserComparator());
 
-		bubbleSort.sort(users, new UserComparator());
-		selectionSort.sort(users, new UserComparator());
+		User[] selection = Arrays.copyOf(users, users.length);
+		System.out.println(Arrays.toString(SelectionSort.sort(selection)));
+		System.out.println();
 
-		SelectionSort.sort(users);
+		User[] bubble = Arrays.copyOf(users, users.length);
+		System.out.println(Arrays.toString(BubbleSort.sort(bubble)));
+		System.out.println();
+
+		User[] insertion = Arrays.copyOf(users, users.length);
+		System.out.println(Arrays.toString(InsertionSort.sort(insertion)));
+		System.out.println();
+
+		User[] heap = Arrays.copyOf(users, users.length);
+		System.out.println(Arrays.toString(HeapSort.sort(heap)));
+		System.out.println();
 	}
 
 }
