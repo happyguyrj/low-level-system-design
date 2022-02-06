@@ -1,6 +1,7 @@
 package com.example.productRepo;
 
 import com.example.productRepo.domain.Product;
+import io.swagger.annotations.Api;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+@Api(value="productStore", description="Operations pertaining to products in Online Store")
 @RestController
 //The @RestController annotation is used to define the RESTful web services. It serves JSON, XML and custom response
 public class ProductRepoController {
