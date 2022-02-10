@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+// The annotation @Api is used to configure the whole API, and apply to all public methods of a class unless overridden by @APIMethod
 @Api(value="productStore", description="Operations pertaining to products in Online Store")
-@RestController
 //The @RestController annotation is used to define the RESTful web services. It serves JSON, XML and custom response
+@RestController
 public class ProductRepoController {
 
     private static Map<String, Product> productRepo = new HashMap<>();
@@ -35,6 +36,7 @@ public class ProductRepoController {
         return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
     }
 
+    // The @PathVariable annotation is used to define the custom or dynamic request URI.
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getProduct(@PathVariable("id") String id) {
         return new ResponseEntity<>(productRepo.get(id), HttpStatus.OK);
@@ -61,8 +63,6 @@ public class ProductRepoController {
         productRepo.put(id, product);
         return new ResponseEntity<>("Product is updated successfully", HttpStatus.OK);
     }
-
-    // The @PathVariable annotation is used to define the custom or dynamic request URI.
 
     // DELETE API
     // The HTTP Delete request is used to delete the existing resource. This method does not contain any Request Body.
