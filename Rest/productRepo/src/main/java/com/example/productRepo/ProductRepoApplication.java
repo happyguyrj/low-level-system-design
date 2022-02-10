@@ -8,6 +8,6 @@ public class ProductRepoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductRepoApplication.class, args);
-	}
+		}
 
 }
