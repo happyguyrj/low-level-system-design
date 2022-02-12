@@ -1,1 +1,25 @@
-<mxfile host="app.diagrams.net" modified="2022-02-12T13:38:09.991Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36" version="16.5.6" etag="NIrihAqCeixQHFWsfEO1" type="github"><diagram id="WSRbePWAdTQRH3GNXas7">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-02-12T13:56:44.604Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36" etag="kNWmNzGby9DnPAoS3zmJ" version="16.5.6" type="github">
+  <diagram id="WSRbePWAdTQRH3GNXas7" name="Page-1">
+    <mxGraphModel dx="716" dy="426" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EOrUfLX56-fCI15zJVo0-5" value="&lt;h1&gt;Tiktok system design&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="EOrUfLX56-fCI15zJVo0-6" value="&lt;span&gt;Challenges&lt;/span&gt;&lt;br&gt;&lt;span&gt;- ingestion&lt;/span&gt;&lt;br&gt;&lt;span&gt;- distribution&lt;/span&gt;&lt;br&gt;&lt;span&gt;- storage&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="EOrUfLX56-fCI15zJVo0-7" value="Functional requiremens&lt;br&gt;- upload videos&lt;br&gt;- feed/timeline&lt;br&gt;- storage&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="115" y="60" width="175" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="EOrUfLX56-fCI15zJVo0-8" value="Non Functional requirements&lt;br&gt;- Eventual consistency&lt;br&gt;- Fault tolerant&lt;br&gt;- High available&lt;br&gt;- Low latency in stream and upload/watch" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="60" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="EOrUfLX56-fCI15zJVo0-9" value="Capacity estimation&lt;br&gt;- 10 m DAU&lt;br&gt;- 100k creators&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="160" width="250" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
