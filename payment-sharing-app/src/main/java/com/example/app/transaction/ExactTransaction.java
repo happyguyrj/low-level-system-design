@@ -1,7 +1,6 @@
 package com.example.app.transaction;
 
 import com.example.app.domain.User;
-import com.example.app.split.EqualSplit;
 import com.example.app.split.ExactSplit;
 import com.example.app.split.Split;
 
