@@ -55,7 +55,7 @@ class SnakeAndLadderService(_size: Int) {
         newPosition = if(newPosition > board.size) {
             oldPosition
         } else {
-            getNewPositionAfterGoingThroughSnakesAndLadders(position)
+            getNewPositionAfterGoingThroughSnakesAndLadders(newPosition)
         }
 
         board.playerPieces += mapOf(player.id to newPosition)
