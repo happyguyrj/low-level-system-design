@@ -4,4 +4,6 @@ This project contains low level design and implementation for serveral mini prob
 - [Cache design](cache-design)
 - [Parking lot](parking-lot)
 - [Deck of cards](deck-of-cards)
-- [Inmemory database](inmemory-database)
+- [Inmemory database store](inmemory-document-store)
+- [Linked list implementation](linked-list)
+- [Notification System](notification-system)
