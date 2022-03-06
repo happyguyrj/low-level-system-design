@@ -56,3 +56,24 @@
     - Do we have enough replicas of the data so that if we lose a few servers we can still serve our users?
     - Similarly, do we have enough copies of different services running such that a few failures will not cause total system shutdown?
     - How are we monitoring the performance of our service? Do we get alerts whenever critical components fail or their performance degrades
+
+# System?
+## What is system?
+## Requirements and Goals of the System
+### Functional Requirements
+### Non-Functional Requirements
+### Extended Requirements
+## Some Design Considerations
+## Capacity Estimation and Constraints
+## System APIs
+## Database Design
+## High Level Design
+## Component Design
+### Application layer
+### Datastore layer
+#### Metadata database
+#### Object storage
+## Purging or DB Cleanup
+## Data Partitioning and Replication
+## Cache and Load Balancer
+## Security and Permissions
