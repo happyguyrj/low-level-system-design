@@ -5,5 +5,5 @@ import com.example.cab.model.Location;
 public interface PricingStrategy {
 
     Double findPrice(Location fromPoint, Location toPoint);
-    
+
 }
