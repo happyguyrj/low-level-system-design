@@ -1,10 +1,10 @@
-package com.example.app;
+package com.example.truecaller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppApplicationTests {
+class TruecallerApplicationTests {
 
 	@Test
 	void contextLoads() {
